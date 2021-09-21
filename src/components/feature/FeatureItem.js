@@ -1,6 +1,7 @@
 import React, { useEffect, useContext, useState } from 'react'
 import Spinner from '../layout/Spinner';
 
+import { Login } from '../user/Login';
 import ProductContext from '../../context/product/productContext';
 import UserContext from '../../context/user/userContext';
 import AlertContext from '../../context/alert/alertContext';
@@ -49,6 +50,8 @@ export const FeatureItem = (props) => {
 
         console.log('Cart Func');
 
+        console.log(product);
+
         let productData = {
             product_id: product._id,
             product_quantity: quantity,
@@ -70,6 +73,12 @@ export const FeatureItem = (props) => {
 
     const onChange = (e) => {
         setQuantity(e.target.value);
+    }
+
+    if(user === null) {
+        return (
+            <Login />
+        )
     }
 
     if(product === null) {

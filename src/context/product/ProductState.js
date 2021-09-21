@@ -24,7 +24,7 @@ export const ProductState = (props) => {
     // Get Products
     const getProducts = async () => {
         try {
-            const res = await axios.get('https://pixie-mern.herokuapp.com/api/products');
+            const res = await axios.get('/api/products');
 
             dispatch({
                  type: GET_PRODUCT, 
@@ -41,7 +41,7 @@ export const ProductState = (props) => {
     // Get Single Product
     const getSingleProduct = async (id) => {
         try {
-            const res = await axios.get(`https://pixie-mern.herokuapp.com/api/products/${id}`);
+            const res = await axios.get(`/api/products/${id}`);
 
             dispatch({
                  type: SINGLE_PRODUCT, 
